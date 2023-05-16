@@ -18,4 +18,4 @@ web-build/
 
 # Misc
 #
-.env
+**/.env
