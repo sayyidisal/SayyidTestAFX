@@ -11,6 +11,7 @@ import * as CurrentLocationAction from "../../store/action/currentLocation";
 import { COLOR, Icon } from "react-native-material-ui";
 import * as Location from "expo-location";
 import Config from "react-native-config";
+import { GOOGLE_MAPS_API_KEY, GEO_CODER } from '@env'
 
 const HomeScreen = () => {
   const searchRef = useRef();
@@ -79,7 +80,7 @@ const HomeScreen = () => {
         "," +
         result.longitude +
         "&key=" +
-        Config.GEO_CODER
+        GEO_CODER
         // "AIzaSyDBd4RX2q260UVhSqCpe8vhV9kS8ofMqAM"
     )
       .then((response) => response.json())
@@ -141,7 +142,7 @@ const HomeScreen = () => {
               styles={{ textInputContainer: { width: "100%" } }}
               fetchDetails
               query={{
-                key: Config.GOOGLE_MAPS_API_KEY,
+                key: GOOGLE_MAPS_API_KEY,
                 language: "id",
               }}
               renderRightButton={() =>
